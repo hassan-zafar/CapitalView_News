@@ -29,7 +29,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mighty.news"
+        applicationId "com.hassan_zafar.capitalview"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 37
