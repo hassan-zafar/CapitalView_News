@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:mighty_news/models/DashboardResponse.dart';
 import 'package:mighty_news/network/RestApis.dart';
