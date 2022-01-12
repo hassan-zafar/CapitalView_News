@@ -9,7 +9,7 @@ const mBaseUrl = 'YOUR BASE URL';
 const supportURL = 'https://support.meetmighty.com/';
 const codeCanyonURL = 'https://codecanyon.net/item/mightynews-flutter-news-app-with-wordpress-backend/29648579?s_rank=3';
 
-const mWeatherBaseUrl = 'https://api.weatherapi.com/v1/current.json';
+// const mWeatherBaseUrl = 'https://api.weatherapi.com/v1/current.json';
 
 const mTTSImageUrl = 'https://3.bp.blogspot.com/-BogykpVgXv8/WYeJk--8xOI/AAAAAAAACWk/GORfjYPnTMoeeMH7uV61H0SPBy02j4ERACLcBGAs/s1600/Relaxing%2BQuotes%2Bwww.mostphrases.blogspot.com.jpg';
 
