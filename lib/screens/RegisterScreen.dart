@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/network/RestApis.dart';
 import 'package:mighty_news/screens/DashboardScreen.dart';
@@ -191,7 +190,7 @@ class RegisterScreenState extends State<RegisterScreen> {
               ),
             ).center(),
             BackButton().paddingTop(30),
-            Observer(builder: (_) => Loader().visible(appStore.isLoading)),
+          Loader().visible(appStore.isLoading),
           ],
         ),
       ),

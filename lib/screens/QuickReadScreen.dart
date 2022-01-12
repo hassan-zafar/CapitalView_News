@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/main.dart';
 import 'package:mighty_news/models/DashboardResponse.dart';
@@ -136,7 +135,7 @@ class _QuickReadScreenState extends State<QuickReadScreen> {
                 }).toList(),
               ),
             ),
-            Observer(builder: (_) => Loader().visible(appStore.isLoading)),
+            Loader().visible(appStore.isLoading),
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:intl/intl.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
@@ -60,8 +59,7 @@ class CommentListScreenState extends State<CommentListScreen> {
       }
     }
 
-    return Observer(
-      builder: (_) => SafeArea(
+    return SafeArea(
         top: !isIos ? true : false,
         child: Scaffold(
           appBar: appBarWidget(
@@ -208,7 +206,7 @@ class CommentListScreenState extends State<CommentListScreen> {
             ),
           ),
         ),
-      ),
+ 
     );
   }
 }

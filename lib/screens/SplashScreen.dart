@@ -6,7 +6,6 @@ import 'package:mighty_news/screens/WalkThroughScreen.dart';
 import 'package:mighty_news/utils/Colors.dart';
 import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:rive/rive.dart';
 
 import '../main.dart';
 import 'DashboardScreen.dart';

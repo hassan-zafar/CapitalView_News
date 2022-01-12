@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/components/ForgotPasswordDialog.dart';
 import 'package:mighty_news/components/LanguageSelectionWidget.dart';
@@ -11,7 +10,6 @@ import 'package:mighty_news/utils/Colors.dart';
 import 'package:mighty_news/utils/Common.dart';
 import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
 import 'DashboardScreen.dart';
 
@@ -51,11 +49,11 @@ class LoginScreenState extends State<LoginScreen> {
       emailController.text = getStringAsync(USER_EMAIL);
       passwordController.text = getStringAsync(PASSWORD);
     }
-    if (isIos) {
-      TheAppleSignIn.onCredentialRevoked!.listen((_) {
-        log("Credentials revoked");
-      });
-    }
+    // if (isIos) {
+    //   TheAppleSignIn.onCredentialRevoked!.listen((_) {
+    //     log("Credentials revoked");
+    //   });
+    // }
     setState(() {});
 
     setDynamicStatusBarColor();
@@ -187,7 +185,7 @@ class LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ).center(),
-            Observer(builder: (_) => Loader().visible(appStore.isLoading)),
+            Loader().visible(appStore.isLoading),
             BackButton().paddingTop(30),
           ],
         ),
