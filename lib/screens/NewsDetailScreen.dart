@@ -60,16 +60,16 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
       setPostContent(widget.newsData!.post_content);
     }
 
-    if (!widget.disableAd && isMobile && !getBoolAsync(DISABLE_AD)) {
-      myBanner = buildBannerAd()..load();
+    // if (!widget.disableAd && isMobile && !getBoolAsync(DISABLE_AD)) {
+    //   myBanner = buildBannerAd()..load();
 
-      if (mAdShowCount < 5) {
-        mAdShowCount++;
-      } else {
-        mAdShowCount = 0;
-        loadInterstitialAd();
-      }
-    }
+    //   if (mAdShowCount < 5) {
+    //     mAdShowCount++;
+    //   } else {
+    //     mAdShowCount = 0;
+    //     loadInterstitialAd();
+    //   }
+    // }
   }
 
   Future<void> setPostContent(String? text) async {
@@ -86,57 +86,57 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
     setState(() {});
   }
 
-  BannerAd buildBannerAd() {
-    return BannerAd(
-      adUnitId: kReleaseMode ? mAdMobBannerId : BannerAd.testAdUnitId,
-      size: AdSize.banner,
-      listener: BannerAdListener(onAdLoaded: (ad) {
-        //
-      }),
-      request: AdRequest(),
-    );
-  }
+  // BannerAd buildBannerAd() {
+  //   return BannerAd(
+  //     adUnitId: kReleaseMode ? mAdMobBannerId : BannerAd.testAdUnitId,
+  //     size: AdSize.banner,
+  //     listener: BannerAdListener(onAdLoaded: (ad) {
+  //       //
+  //     }),
+  //     request: AdRequest(),
+  //   );
+  // }
 
-  Future<void> loadInterstitialAd() async {
-    InterstitialAd.load(
-      adUnitId: kReleaseMode ? mAdMobInterstitialId : InterstitialAd.testAdUnitId,
-      request: AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (InterstitialAd ad) {
-          myInterstitial = ad;
-        },
-        onAdFailedToLoad: (LoadAdError error) {
-          myInterstitial = null;
-        },
-      ),
-    );
-  }
+  // Future<void> loadInterstitialAd() async {
+  //   InterstitialAd.load(
+  //     adUnitId: kReleaseMode ? mAdMobInterstitialId : InterstitialAd.testAdUnitId,
+  //     request: AdRequest(),
+  //     adLoadCallback: InterstitialAdLoadCallback(
+  //       onAdLoaded: (InterstitialAd ad) {
+  //         myInterstitial = ad;
+  //       },
+  //       onAdFailedToLoad: (LoadAdError error) {
+  //         myInterstitial = null;
+  //       },
+  //     ),
+  //   );
+  // }
 
-  Future<void> showInterstitialAd() async {
-    if (myInterstitial == null) {
-      print('Warning: attempt to show interstitial before loaded.');
-      return;
-    }
-    myInterstitial!.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
-      onAdDismissedFullScreenContent: (InterstitialAd ad) {
-        ad.dispose();
-        loadInterstitialAd();
-      },
-      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
-        ad.dispose();
-        loadInterstitialAd();
-      },
-    );
-    myInterstitial!.show();
-    myInterstitial = null;
-  }
+  // Future<void> showInterstitialAd() async {
+  //   if (myInterstitial == null) {
+  //     print('Warning: attempt to show interstitial before loaded.');
+  //     return;
+  //   }
+  //   myInterstitial!.fullScreenContentCallback = FullScreenContentCallback(
+  //     onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
+  //     onAdDismissedFullScreenContent: (InterstitialAd ad) {
+  //       ad.dispose();
+  //       loadInterstitialAd();
+  //     },
+  //     onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+  //       ad.dispose();
+  //       loadInterstitialAd();
+  //     },
+  //   );
+  //   myInterstitial!.show();
+  //   myInterstitial = null;
+  // }
 
   @override
   void dispose() async {
     super.dispose();
     //if (widget.disableAd) setDynamicStatusBarColor();
-    showInterstitialAd();
+    // showInterstitialAd();
   }
 
   Future<void> addToWishList() async {
