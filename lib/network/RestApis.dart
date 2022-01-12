@@ -37,70 +37,67 @@ import 'package:nb_utils/nb_utils.dart';
 //   }
 // }
 
-Future<List<TweetModel>> loadTweetConfig() async {
-  AuthCredential credential = TwitterAuthProvider.credential(accessToken: mTwitterApiAccessToken, secret: mTwitterApiAccessTokenSecret);
+// Future<List<TweetModel>> loadTweetConfig() async {
+//   AuthCredential credential = TwitterAuthProvider.credential(accessToken: mTwitterApiAccessToken, secret: mTwitterApiAccessTokenSecret);
+//   return FirebaseAuth.instance.signInWithCredential(credential).then((value) async {
+//     final String proxy = isWeb ? "http://localhost:8888/" : "";
+//     final String authUrl = "${proxy}https://api.twitter.com/oauth2/token";
+//     final String key = Uri.encodeQueryComponent(mTwitterApiKey);
+//     final String secret = Uri.encodeQueryComponent(mTwitterApiSecretKey);
+//     final Uint8List bytes = AsciiEncoder().convert("$key:$secret");
+//     final String auth = base64Encode(bytes);
+//     Response authRes = await post(
+//       Uri.parse(authUrl),
+//       headers: {"Authorization": "Basic $auth", "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
+//       body: "grant_type=client_credentials",
+//     );
+//     Map decoded = jsonDecode(authRes.body);
 
-  return FirebaseAuth.instance.signInWithCredential(credential).then((value) async {
-    final String proxy = isWeb ? "http://localhost:8888/" : "";
+//     if (isIos) {
+//       await setValue(TWITTER_USERNAME, value.additionalUserInfo!.profile!['screen_name']);
+//     } else {
+//       await setValue(TWITTER_USERNAME, value.additionalUserInfo!.username.validate());
+//     }
 
-    final String authUrl = "${proxy}https://api.twitter.com/oauth2/token";
-    final String key = Uri.encodeQueryComponent(mTwitterApiKey);
-    final String secret = Uri.encodeQueryComponent(mTwitterApiSecretKey);
-    final Uint8List bytes = AsciiEncoder().convert("$key:$secret");
-    final String auth = base64Encode(bytes);
+//     await setValue(TWITTER_ACCESS_TOKEN, decoded['access_token']);
+//     await setValue(IS_TWITTER_LOGGED_IN, true);
 
-    Response authRes = await post(
-      Uri.parse(authUrl),
-      headers: {"Authorization": "Basic $auth", "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
-      body: "grant_type=client_credentials",
-    );
+//     FirebaseAuth.instance.signOut();
 
-    Map decoded = jsonDecode(authRes.body);
+//     if (retryCount > 2) {
+//       //retryCount = 0;
 
-    if (isIos) {
-      await setValue(TWITTER_USERNAME, value.additionalUserInfo!.profile!['screen_name']);
-    } else {
-      await setValue(TWITTER_USERNAME, value.additionalUserInfo!.username.validate());
-    }
+//       throw '';
+//     }
+//     return await loadTweets();
+//   }).catchError((e) {
+//     retryCount++;
+//   });
+// }
 
-    await setValue(TWITTER_ACCESS_TOKEN, decoded['access_token']);
-    await setValue(IS_TWITTER_LOGGED_IN, true);
+// Future<List<TweetModel>> loadTweets() async {
+//   return await get(
+//     Uri.parse('https://api.twitter.com/1.1/statuses/user_timeline.json?tweet_mode=extended&screen_name=${getStringAsync(TWITTER_USERNAME)}'),
+//     headers: {'Authorization': 'Bearer ${getStringAsync(TWITTER_ACCESS_TOKEN)}'},
+//   ).then((timelineRes) async {
+//     if (timelineRes.statusCode.isSuccessful()) {
+//       retryCount = 0;
+//       log('Response: ${timelineRes.body}');
 
-    FirebaseAuth.instance.signOut();
+//       Iterable it = jsonDecode(timelineRes.body);
+//       return it.map((e) => TweetModel.fromJson(e)).toList();
+//     } else {
+//       retryCount++;
+//       await setValue(IS_TWITTER_LOGGED_IN, false);
 
-    if (retryCount > 2) {
-      //retryCount = 0;
+//       return await loadTweetConfig();
+//     }
+//   }).catchError((e) {
+//     retryCount++;
+//     throw e;
+//   });
+// }
 
-      throw '';
-    }
-    return await loadTweets();
-  }).catchError((e) {
-    retryCount++;
-  });
-}
-
-Future<List<TweetModel>> loadTweets() async {
-  return await get(
-    Uri.parse('https://api.twitter.com/1.1/statuses/user_timeline.json?tweet_mode=extended&screen_name=${getStringAsync(TWITTER_USERNAME)}'),
-    headers: {'Authorization': 'Bearer ${getStringAsync(TWITTER_ACCESS_TOKEN)}'},
-  ).then((timelineRes) async {
-    if (timelineRes.statusCode.isSuccessful()) {
-      retryCount = 0;
-      log('Response: ${timelineRes.body}');
-
-      Iterable it = jsonDecode(timelineRes.body);
-      return it.map((e) => TweetModel.fromJson(e)).toList();
-    } else {
-      retryCount++;
-      await setValue(IS_TWITTER_LOGGED_IN, false);
-
-      return await loadTweetConfig();
-    }
-  }).catchError((e) {
-    retryCount++;
-    throw e;
-  });
-}
 //endregion
 
 //region User Authentications
