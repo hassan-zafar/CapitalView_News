@@ -14,18 +14,18 @@ const mWeatherBaseUrl = 'https://api.weatherapi.com/v1/current.json';
 const mTTSImageUrl = 'https://3.bp.blogspot.com/-BogykpVgXv8/WYeJk--8xOI/AAAAAAAACWk/GORfjYPnTMoeeMH7uV61H0SPBy02j4ERACLcBGAs/s1600/Relaxing%2BQuotes%2Bwww.mostphrases.blogspot.com.jpg';
 
 /// Obtain your key from https://api.weatherapi.com
-const mWeatherAPIKey = 'YOUR WEATHER API KEY';
+// const mWeatherAPIKey = 'YOUR WEATHER API KEY';
 
 const mOneSignalAPPKey = 'YOUR ONESIGNAL APPKEY';
 
-var mTwitterApiKey = 'YOUR TWITTER API KEY';
-var mTwitterApiSecretKey = 'YOUR TWITTER SECRET KEY';
-var mTwitterApiAccessToken = 'YOUR TWITTER ACCESS TOKEN';
-var mTwitterApiAccessTokenSecret = 'YOUR TWITTER ACCESS TOKEN SECRET';
+// var mTwitterApiKey = 'YOUR TWITTER API KEY';
+// var mTwitterApiSecretKey = 'YOUR TWITTER SECRET KEY';
+// var mTwitterApiAccessToken = 'YOUR TWITTER ACCESS TOKEN';
+// var mTwitterApiAccessTokenSecret = 'YOUR TWITTER ACCESS TOKEN SECRET';
 
-const mAdMobAppId = 'YOUR ADMOB APP ID';
-const mAdMobBannerId = 'YOUR ADMOB BANNER ID';
-const mAdMobInterstitialId = 'YOUR ADMOB INTERSTITIAL ID';
+// const mAdMobAppId = 'YOUR ADMOB APP ID';
+// const mAdMobBannerId = 'YOUR ADMOB BANNER ID';
+// const mAdMobInterstitialId = 'YOUR ADMOB INTERSTITIAL ID';
 //endregion
 
 //App store URL

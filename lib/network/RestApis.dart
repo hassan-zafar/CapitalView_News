@@ -22,20 +22,20 @@ import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 //region Third Party APIs
-Future<WeatherResponse> getWeatherApi() async {
-  LocationPermission permission = await Geolocator.requestPermission();
+// Future<WeatherResponse> getWeatherApi() async {
+//   LocationPermission permission = await Geolocator.requestPermission();
 
-  if (permission == LocationPermission.always || permission == LocationPermission.whileInUse) {
-    Position? position = await Geolocator.getLastKnownPosition();
-    if (position == null) {
-      position = await Geolocator.getCurrentPosition();
-    }
+//   if (permission == LocationPermission.always || permission == LocationPermission.whileInUse) {
+//     Position? position = await Geolocator.getLastKnownPosition();
+//     if (position == null) {
+//       position = await Geolocator.getCurrentPosition();
+//     }
 
-    return WeatherResponse.fromJson(await (handleResponse(await buildHttpResponse('$mWeatherBaseUrl?key=$mWeatherAPIKey&q=${position.latitude},${position.longitude}'), true)));
-  } else {
-    throw errorSomethingWentWrong;
-  }
-}
+//     return WeatherResponse.fromJson(await (handleResponse(await buildHttpResponse('$mWeatherBaseUrl?key=$mWeatherAPIKey&q=${position.latitude},${position.longitude}'), true)));
+//   } else {
+//     throw errorSomethingWentWrong;
+//   }
+// }
 
 Future<List<TweetModel>> loadTweetConfig() async {
   AuthCredential credential = TwitterAuthProvider.credential(accessToken: mTwitterApiAccessToken, secret: mTwitterApiAccessTokenSecret);

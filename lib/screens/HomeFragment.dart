@@ -68,7 +68,9 @@ class HomeFragmentState extends State<HomeFragment> {
                 background: Container(
                   height: !getBoolAsync(DISABLE_LOCATION_WIDGET) ? 100 : 70,
                   color: getAppBarWidgetBackGroundColor(),
-                  child: !getBoolAsync(DISABLE_LOCATION_WIDGET) ? WeatherWidget() : HeaderWidget(),
+                  child: 
+                  // !getBoolAsync(DISABLE_LOCATION_WIDGET) ? WeatherWidget() :
+                   HeaderWidget(),
                 ),
               ),
             ),
