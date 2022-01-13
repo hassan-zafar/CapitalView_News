@@ -40,37 +40,6 @@ class CryptoCurrenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Cryptocurrencies")),
-        elevation: 0,
-        brightness: Brightness.dark,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          iconSize: 28.0,
-          color: Colors.lightBlue,
-          onPressed: () {
-            Navigator.pop(context);
-            // Navigator.push(context,
-            //     MaterialPageRoute(builder: (context) => LoginScreen()));
-          },
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(
-              right: 6,
-            ),
-            child: IconButton(
-              icon: Icon(Icons.search),
-              color: Colors.lightBlue,
-              iconSize: 28,
-              onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => SearchScreen()));
-              },
-            ),
-          ),
-        ],
-      ),
       body: Container(
         padding: EdgeInsets.only(bottom: 42),
         child: FutureBuilder<List<dynamic>>(
