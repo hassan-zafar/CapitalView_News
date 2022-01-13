@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/components/ForgotPasswordDialog.dart';
 import 'package:mighty_news/components/LanguageSelectionWidget.dart';
@@ -10,6 +11,7 @@ import 'package:mighty_news/utils/Colors.dart';
 import 'package:mighty_news/utils/Common.dart';
 import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
 import 'DashboardScreen.dart';
 
@@ -45,15 +47,17 @@ class LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> init() async {
-    if (!getBoolAsync(IS_SOCIAL_LOGIN) && getStringAsync(LOGIN_TYPE) != LoginTypeOTP && !getBoolAsync(IS_REMEMBERED)) {
+    if (!getBoolAsync(IS_SOCIAL_LOGIN) &&
+        getStringAsync(LOGIN_TYPE) != LoginTypeOTP &&
+        !getBoolAsync(IS_REMEMBERED)) {
       emailController.text = getStringAsync(USER_EMAIL);
       passwordController.text = getStringAsync(PASSWORD);
     }
-    // if (isIos) {
-    //   TheAppleSignIn.onCredentialRevoked!.listen((_) {
-    //     log("Credentials revoked");
-    //   });
-    // }
+    if (isIos) {
+      TheAppleSignIn.onCredentialRevoked!.listen((_) {
+        log("Credentials revoked");
+      });
+    }
     setState(() {});
 
     setDynamicStatusBarColor();
@@ -110,13 +114,16 @@ class LoginScreenState extends State<LoginScreen> {
                   children: <Widget>[
                     Image.asset('assets/app_logo.png', height: 100),
                     16.height,
-                    Text(appLocalization.translate('login_Title'), style: boldTextStyle(size: 22)),
+                    Text(appLocalization.translate('login_Title'),
+                        style: boldTextStyle(size: 22)),
                     20.height,
                     AppTextField(
                       controller: emailController,
                       textFieldType: TextFieldType.EMAIL,
-                      decoration: inputDecoration(context, hint: appLocalization.translate('email')),
-                      errorInvalidEmail: appLocalization.translate('email_Validation'),
+                      decoration: inputDecoration(context,
+                          hint: appLocalization.translate('email')),
+                      errorInvalidEmail:
+                          appLocalization.translate('email_Validation'),
                       nextFocus: passFocus,
                     ),
                     8.height,
@@ -124,8 +131,10 @@ class LoginScreenState extends State<LoginScreen> {
                       controller: passwordController,
                       textFieldType: TextFieldType.PASSWORD,
                       focus: passFocus,
-                      decoration: inputDecoration(context, hint: appLocalization.translate('password')),
-                      errorMinimumPasswordLength: appLocalization.translate('password_length'),
+                      decoration: inputDecoration(context,
+                          hint: appLocalization.translate('password')),
+                      errorMinimumPasswordLength:
+                          appLocalization.translate('password_length'),
                       onFieldSubmitted: (s) {
                         signIn();
                       },
@@ -136,21 +145,29 @@ class LoginScreenState extends State<LoginScreen> {
                         Row(
                           children: [
                             Checkbox(
-                              value: getBoolAsync(IS_REMEMBERED, defaultValue: true),
+                              value: getBoolAsync(IS_REMEMBERED,
+                                  defaultValue: true),
                               onChanged: (v) async {
                                 await setValue(IS_REMEMBERED, v);
                                 setState(() {});
                               },
                             ),
-                            Text(appLocalization.translate('remember_me'), style: primaryTextStyle()).onTap(() async {
-                              await setValue(IS_REMEMBERED, !getBoolAsync(IS_REMEMBERED));
+                            Text(appLocalization.translate('remember_me'),
+                                    style: primaryTextStyle())
+                                .onTap(() async {
+                              await setValue(
+                                  IS_REMEMBERED, !getBoolAsync(IS_REMEMBERED));
                               setState(() {});
                             }).expand(),
                           ],
                         ).expand(),
-                        Text(appLocalization.translate('forgot_pwd'), style: primaryTextStyle()).paddingAll(8).onTap(() async {
+                        Text(appLocalization.translate('forgot_pwd'),
+                                style: primaryTextStyle())
+                            .paddingAll(8)
+                            .onTap(() async {
                           hideKeyboard(context);
-                          await showInDialog(context, builder: (context) => ForgotPasswordDialog());
+                          await showInDialog(context,
+                              builder: (context) => ForgotPasswordDialog());
                         }),
                       ],
                     ),
@@ -158,7 +175,9 @@ class LoginScreenState extends State<LoginScreen> {
                     AppButton(
                       text: appLocalization.translate('login'),
                       textStyle: boldTextStyle(color: white),
-                      color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
+                      color: appStore.isDarkMode
+                          ? scaffoldSecondaryDark
+                          : colorPrimary,
                       onTap: () {
                         signIn();
                       },
@@ -168,7 +187,8 @@ class LoginScreenState extends State<LoginScreen> {
                     AppButton(
                       text: appLocalization.translate('signUp'),
                       textStyle: boldTextStyle(color: textPrimaryColorGlobal),
-                      color: appStore.isDarkMode ? scaffoldSecondaryDark : white,
+                      color:
+                          appStore.isDarkMode ? scaffoldSecondaryDark : white,
                       width: context.width(),
                       onTap: () {
                         hideKeyboard(context);
@@ -180,12 +200,13 @@ class LoginScreenState extends State<LoginScreen> {
                       SocialLoginWidget(voidCallback: () {
                         DashboardScreen().launch(context, isNewTask: true);
                       }),
-                    LanguageSelectionWidget(),
+                    //TODO:Commented it
+                    // LanguageSelectionWidget(),
                   ],
                 ),
               ),
             ).center(),
-            Loader().visible(appStore.isLoading),
+            Observer(builder: (_) => Loader().visible(appStore.isLoading)),
             BackButton().paddingTop(30),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/components/NewsItemWidget.dart';
@@ -99,7 +100,8 @@ class BookmarkNewsScreenState extends State<BookmarkNewsScreen> {
       top: !isIos ? true : false,
       child: Scaffold(
         appBar: appBarWidget(appLocalization.translate('Bookmarks'), showBack: true, color: getAppBarWidgetBackGroundColor(), textColor: getAppBarWidgetTextColor()),
-        body: Stack(
+        body: Observer(
+          builder: (_) => Stack(
             fit: StackFit.expand,
             alignment: Alignment.center,
             children: [
@@ -124,7 +126,8 @@ class BookmarkNewsScreenState extends State<BookmarkNewsScreen> {
               ),
             ],
           ),
-        )
+        ),
+      ),
     );
   }
 }

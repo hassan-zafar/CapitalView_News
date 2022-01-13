@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
@@ -134,7 +135,8 @@ class DashboardScreenState extends State<DashboardScreen> with AfterLayoutMixin<
         },
         child: Scaffold(
           body: Container(child: widgets[currentIndex]),
-          bottomNavigationBar: BottomNavigationBar(
+          bottomNavigationBar: Observer(
+            builder: (_) => BottomNavigationBar(
               currentIndex: currentIndex,
               items: [
                 BottomNavigationBarItem(
@@ -198,6 +200,7 @@ class DashboardScreenState extends State<DashboardScreen> with AfterLayoutMixin<
               },
             ),
           ),
+        ),
       ),
     );
   }

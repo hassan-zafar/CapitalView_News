@@ -6,6 +6,7 @@ import 'package:mighty_news/screens/WalkThroughScreen.dart';
 import 'package:mighty_news/utils/Colors.dart';
 import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:rive/rive.dart';
 
 import '../main.dart';
 import 'DashboardScreen.dart';
@@ -42,8 +43,7 @@ class SplashScreenState extends State<SplashScreen> {
 
     int themeModeIndex = getIntAsync(THEME_MODE_INDEX);
     if (themeModeIndex == ThemeModeSystem) {
-      appStore.setDarkMode(
-          MediaQuery.of(context).platformBrightness == Brightness.dark);
+      appStore.setDarkMode(MediaQuery.of(context).platformBrightness == Brightness.dark);
     }
 
     if (getBoolAsync(IS_FIRST_TIME, defaultValue: true)) {
@@ -108,15 +108,16 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          appStore.isDarkMode ? scaffoldSecondaryDark : Colors.white,
+      backgroundColor: appStore.isDarkMode ? scaffoldSecondaryDark : Colors.white,
       body: SizedBox(
         height: context.height(),
         width: context.width(),
-        child: Center(
-          child: Image.asset(
-            'assets/app_logo.png',
-          ),
+        child: RiveAnimation.asset(
+          'assets/rive/splash_anim.riv',
+          animations: ['NewsLoadAnim'],
+          fit: BoxFit.fitHeight,
+          antialiasing: true,
+          stateMachines: ['NewsStateMachine'],
         ),
       ),
     );

@@ -19,7 +19,10 @@ class SocialLoginWidget extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(2),
-          decoration: BoxDecoration(shape: BoxShape.circle, color: appStore.isDarkMode ? Colors.white12 : Colors.grey.shade100),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color:
+                  appStore.isDarkMode ? Colors.white12 : Colors.grey.shade100),
           child: IconButton(
             icon: Image.asset('assets/ic_google.png', height: 30),
             onPressed: () async {
@@ -39,49 +42,53 @@ class SocialLoginWidget extends StatelessWidget {
             },
           ),
         ),
-        // Container(
-        //   margin: EdgeInsets.only(left: 4),
-        //   padding: EdgeInsets.all(2),
-        //   decoration: BoxDecoration(shape: BoxShape.circle, color: appStore.isDarkMode ? Colors.white12 : Colors.black),
-        //   child: IconButton(
-        //     icon: Image.asset('assets/ic_apple.png', color: white),
-        //     onPressed: () async {
-        //       hideKeyboard(context);
-
-        //       appStore.setLoading(true);
-
-        //       await appleLogIn().then((value) {
-        //         //DashboardScreen().launch(context, isNewTask: true);
-
-        //         voidCallback?.call();
-        //       }).catchError((e) {
-        //         toast(e.toString());
-        //       });
-
-        //       appStore.setLoading(false);
-        //     },
-        //   ),
-        // ).visible(isIos),
         Container(
           margin: EdgeInsets.only(left: 4),
           padding: EdgeInsets.all(2),
-          decoration: BoxDecoration(shape: BoxShape.circle, color: appStore.isDarkMode ? Colors.white12 : Colors.grey.shade100),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: appStore.isDarkMode ? Colors.white12 : Colors.black),
           child: IconButton(
-            icon: Icon(Feather.phone, color: Colors.blue),
+            icon: Image.asset('assets/ic_apple.png', color: white),
             onPressed: () async {
               hideKeyboard(context);
 
               appStore.setLoading(true);
 
-              await showInDialog(context, builder: (context) => OTPDialog(), barrierDismissible: false).catchError((e) {
+              await appleLogIn().then((value) {
+                //DashboardScreen().launch(context, isNewTask: true);
+
+                voidCallback?.call();
+              }).catchError((e) {
                 toast(e.toString());
               });
 
               appStore.setLoading(false);
-              voidCallback?.call();
             },
           ),
-        ),
+        ).visible(isIos),
+        //TODO:Commented it
+
+        // Container(
+        //   margin: EdgeInsets.only(left: 4),
+        //   padding: EdgeInsets.all(2),
+        //   decoration: BoxDecoration(shape: BoxShape.circle, color: appStore.isDarkMode ? Colors.white12 : Colors.grey.shade100),
+        //   child: IconButton(
+        //     icon: Icon(Feather.phone, color: Colors.blue),
+        //     onPressed: () async {
+        //       hideKeyboard(context);
+
+        //       appStore.setLoading(true);
+
+        //       await showInDialog(context, builder: (context) => OTPDialog(), barrierDismissible: false).catchError((e) {
+        //         toast(e.toString());
+        //       });
+
+        //       appStore.setLoading(false);
+        //       voidCallback?.call();
+        //     },
+        //   ),
+        // ),
       ],
     );
   }

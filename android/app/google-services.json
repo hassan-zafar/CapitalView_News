@@ -41,6 +41,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817316976122:android:b4e7615b4bf002170b8043",
+        "android_client_info": {
+          "package_name": "com.mighty.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817316976122-fmt609ajmjdevud8jrt0gq838dpf5bu5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mighty.news",
+            "certificate_hash": "387accc7b18bc054a3d2c235d89180c8014d7a46"
+          }
+        },
+        {
+          "client_id": "817316976122-55u1cvej70fltd74urchkenepec56shu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChgjI3hjWlO2SVou35BrRTh0BRTxRogxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817316976122-55u1cvej70fltd74urchkenepec56shu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

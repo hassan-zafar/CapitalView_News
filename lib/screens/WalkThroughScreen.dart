@@ -33,7 +33,8 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
       WalkThroughModel(
         image: 'assets/walk_1.png',
         title: 'Subscribe for updates',
-        subTitle: 'Mighty News offers an awesome category filter option which will let you access what you are interested in straight away!',
+        subTitle:
+            'Capital View offers an awesome category filter option which will let you access what you are interested in straight away!',
         color: colorPrimary,
       ),
     );
@@ -41,7 +42,8 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
       WalkThroughModel(
         image: 'assets/walk_3.png',
         title: 'Choose your category',
-        subTitle: 'Mighty News is a complete set of incredible, easily importable UI and get regular updates by subscribing to it!',
+        subTitle:
+            'Capital View is a complete set of incredible, easily importable UI and get regular updates by subscribing to it!',
         color: Color(0xFF6BD19B),
       ),
     );
@@ -49,7 +51,8 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
       WalkThroughModel(
         image: 'assets/walk_2.png',
         title: 'Daily Notifications',
-        subTitle: 'Notify your users with the latest news with a daily push notification feature. They are highly interactive and useful.',
+        subTitle:
+            'Notify your users with the latest news with a daily push notification feature. They are highly interactive and useful.',
         color: Color(0xFFA79BFC),
       ),
     );
@@ -81,17 +84,27 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
                         arcType: ArcType.CONVEY,
                         edge: Edge.TOP,
                         height: 60,
-                        child: Container(height: context.height() * 0.5, width: context.width(), color: e.color),
+                        child: Container(
+                            height: context.height() * 0.5,
+                            width: context.width(),
+                            color: e.color),
                       ),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(e.image!, height: context.height() * 0.6, width: newsListWidgetSize(context), fit: BoxFit.fitWidth),
+                        Image.asset(e.image!,
+                            height: context.height() * 0.6,
+                            width: newsListWidgetSize(context),
+                            fit: BoxFit.fitWidth),
                         16.height,
-                        Text(e.title!, style: boldTextStyle(color: Colors.white, size: 24), textAlign: TextAlign.center),
+                        Text(e.title!,
+                            style: boldTextStyle(color: Colors.white, size: 24),
+                            textAlign: TextAlign.center),
                         16.height,
-                        Text(e.subTitle!, style: primaryTextStyle(color: Colors.white), textAlign: TextAlign.center),
+                        Text(e.subTitle!,
+                            style: primaryTextStyle(color: Colors.white),
+                            textAlign: TextAlign.center),
                       ],
                     ).paddingOnly(left: 16, right: 16),
                   ],
@@ -113,7 +126,8 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
                 Container(
                   child: Text('skip'),
                   decoration: boxDecorationRoundedWithShadow(30),
-                  padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                  padding:
+                      EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
                 ).onTap(() async {
                   await setValue(IS_FIRST_TIME, false);
 
@@ -126,14 +140,17 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
                 Container(
                   child: Text(currentPage != 2 ? 'next' : 'finish'),
                   decoration: boxDecorationRoundedWithShadow(30),
-                  padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                  padding:
+                      EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
                 ).onTap(() async {
                   if (currentPage == 2) {
                     await setValue(IS_FIRST_TIME, false);
 
                     DashboardScreen().launch(context, isNewTask: true);
                   } else {
-                    pageController.animateToPage(currentPage + 1, duration: Duration(milliseconds: 300), curve: Curves.linear);
+                    pageController.animateToPage(currentPage + 1,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.linear);
                   }
                 }),
               ],

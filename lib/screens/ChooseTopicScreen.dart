@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/components/CategoryItemWidget.dart';
 import 'package:mighty_news/models/CategoryData.dart';
@@ -109,7 +110,7 @@ class ChooseTopicScreenState extends State<ChooseTopicScreen> {
                 );
               },
             ),
-           Loader().visible(appStore.isLoading),
+            Observer(builder: (_) => Loader().visible(appStore.isLoading)),
           ],
         ),
       ),

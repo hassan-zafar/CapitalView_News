@@ -24,7 +24,8 @@ class NewsDetailScreen extends StatefulWidget {
   String? id;
   final bool disableAd;
 
-  NewsDetailScreen({this.newsData, this.heroTag, this.id, this.disableAd = true});
+  NewsDetailScreen(
+      {this.newsData, this.heroTag, this.id, this.disableAd = true});
 
   @override
   NewsDetailScreenState createState() => NewsDetailScreenState();
@@ -51,7 +52,8 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
     }
 
     if (await isNetworkAvailable()) {
-      getBlogDetail({'post_id': widget.id.toString()}, appStore.isLoggedIn).then((value) {
+      getBlogDetail({'post_id': widget.id.toString()}, appStore.isLoggedIn)
+          .then((value) {
         widget.newsData = value;
 
         setPostContent(value.post_content);
@@ -60,6 +62,7 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
       setPostContent(widget.newsData!.post_content);
     }
 
+//TODO:Commented it
     // if (!widget.disableAd && isMobile && !getBoolAsync(DISABLE_AD)) {
     //   myBanner = buildBannerAd()..load();
 
@@ -86,6 +89,7 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
     setState(() {});
   }
 
+//TODO:Commented it
   // BannerAd buildBannerAd() {
   //   return BannerAd(
   //     adUnitId: kReleaseMode ? mAdMobBannerId : BannerAd.testAdUnitId,
@@ -136,6 +140,8 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
   void dispose() async {
     super.dispose();
     //if (widget.disableAd) setDynamicStatusBarColor();
+
+//TODO:Commented it
     // showInterstitialAd();
   }
 
@@ -186,13 +192,28 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
   Widget build(BuildContext context) {
     Widget getVariant(int postView, List<NewsData> relatedNews) {
       if (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1) {
-        return DetailPageVariant1Widget(widget.newsData, postView: postView, postContent: postContent, relatedNews: relatedNews.validate(), heroTag: widget.heroTag);
+        return DetailPageVariant1Widget(widget.newsData,
+            postView: postView,
+            postContent: postContent,
+            relatedNews: relatedNews.validate(),
+            heroTag: widget.heroTag);
       } else if (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 2) {
-        return DetailPageVariant2Widget(widget.newsData, postView: postView, postContent: postContent, relatedNews: relatedNews.validate(), heroTag: widget.heroTag);
+        return DetailPageVariant2Widget(widget.newsData,
+            postView: postView,
+            postContent: postContent,
+            relatedNews: relatedNews.validate(),
+            heroTag: widget.heroTag);
       } else if (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 3) {
-        return DetailPageVariant3Widget(widget.newsData, postView: postView, postContent: postContent, relatedNews: relatedNews.validate());
+        return DetailPageVariant3Widget(widget.newsData,
+            postView: postView,
+            postContent: postContent,
+            relatedNews: relatedNews.validate());
       } else {
-        return DetailPageVariant1Widget(widget.newsData, postView: postView, postContent: postContent, relatedNews: relatedNews.validate(), heroTag: widget.heroTag);
+        return DetailPageVariant1Widget(widget.newsData,
+            postView: postView,
+            postContent: postContent,
+            relatedNews: relatedNews.validate(),
+            heroTag: widget.heroTag);
       }
     }
 
@@ -200,24 +221,45 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
       // top: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1),
       top: !isIos ? true : false,
       child: Scaffold(
-        appBar: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && widget.newsData != null)
+        appBar: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 &&
+                widget.newsData != null)
             ? appBarWidget(
-                parseHtmlString(widget.newsData != null ? widget.newsData!.post_title.validate() : ''),
+                parseHtmlString(widget.newsData != null
+                    ? widget.newsData!.post_title.validate()
+                    : ''),
                 showBack: true,
-                color: getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: defaultDashboardPage) != 1 ? Theme.of(context).cardColor : getAppPrimaryColor(),
-                textColor: getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: defaultDashboardPage) != 1 ? textPrimaryColorGlobal : Colors.white,
+                color: getIntAsync(DASHBOARD_PAGE_VARIANT,
+                            defaultValue: defaultDashboardPage) !=
+                        1
+                    ? Theme.of(context).cardColor
+                    : getAppPrimaryColor(),
+                textColor: getIntAsync(DASHBOARD_PAGE_VARIANT,
+                            defaultValue: defaultDashboardPage) !=
+                        1
+                    ? textPrimaryColorGlobal
+                    : Colors.white,
                 actions: [
                   if (widget.newsData != null)
                     IconButton(
                       icon: Icon(
-                        widget.newsData!.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o,
-                        color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: defaultDashboardPage) == 1) || appStore.isDarkMode
+                        widget.newsData!.is_fav.validate()
+                            ? FontAwesome.bookmark
+                            : FontAwesome.bookmark_o,
+                        color: (getIntAsync(DETAIL_PAGE_VARIANT,
+                                            defaultValue: 1) ==
+                                        1 &&
+                                    getIntAsync(DASHBOARD_PAGE_VARIANT,
+                                            defaultValue:
+                                                defaultDashboardPage) ==
+                                        1) ||
+                                appStore.isDarkMode
                             ? Colors.white
                             : Colors.black,
                       ),
                       onPressed: () async {
                         if (!appStore.isLoggedIn) {
-                          bool? res = await LoginScreen(isNewTask: false).launch(context);
+                          bool? res = await LoginScreen(isNewTask: false)
+                              .launch(context);
 
                           if (res ?? false) {
                             addToWishList();
@@ -230,7 +272,13 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
                   IconButton(
                     icon: Icon(
                       Icons.share_rounded,
-                      color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: defaultDashboardPage) == 1) || appStore.isDarkMode
+                      color: (getIntAsync(DETAIL_PAGE_VARIANT,
+                                          defaultValue: 1) ==
+                                      1 &&
+                                  getIntAsync(DASHBOARD_PAGE_VARIANT,
+                                          defaultValue: defaultDashboardPage) ==
+                                      1) ||
+                              appStore.isDarkMode
                           ? Colors.white
                           : Colors.black,
                     ),
@@ -241,12 +289,19 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
                   IconButton(
                     icon: Icon(
                       Icons.play_circle_outline,
-                      color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: defaultDashboardPage) == 1) || appStore.isDarkMode
+                      color: (getIntAsync(DETAIL_PAGE_VARIANT,
+                                          defaultValue: 1) ==
+                                      1 &&
+                                  getIntAsync(DASHBOARD_PAGE_VARIANT,
+                                          defaultValue: defaultDashboardPage) ==
+                                      1) ||
+                              appStore.isDarkMode
                           ? Colors.white
                           : Colors.black,
                     ),
                     onPressed: () async {
-                      ReadAloudScreen(parseHtmlString(postContent)).launch(context);
+                      ReadAloudScreen(parseHtmlString(postContent))
+                          .launch(context);
                     },
                   ),
                 ],
@@ -259,10 +314,13 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
                 width: context.width(),
                 child: Stack(
                   children: [
-                    getVariant(widget.newsData!.post_view.validate(), widget.newsData!.related_news.validate()),
+                    getVariant(widget.newsData!.post_view.validate(),
+                        widget.newsData!.related_news.validate()),
                     if (!widget.disableAd && myBanner != null)
                       Positioned(
-                        child: Container(child: AdWidget(ad: myBanner!), color: Colors.white),
+                        child: Container(
+                            child: AdWidget(ad: myBanner!),
+                            color: Colors.white),
                         bottom: 0,
                         height: AdSize.banner.height.toDouble(),
                         width: context.width(),

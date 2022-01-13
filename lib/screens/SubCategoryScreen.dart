@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/components/PaginatedNewsWidget.dart';
 import 'package:mighty_news/main.dart';
@@ -110,7 +111,7 @@ class SubCategoryScreenState extends State<SubCategoryScreen> {
                   },
                 ),
               ),
-              Loader().visible(appStore.isLoading),
+              Observer(builder: (_) => Loader().visible(appStore.isLoading)),
               noDataWidget(context).visible(categories.isEmpty && !appStore.isLoading && categoryId == 0),
             ],
           ),

@@ -33,6 +33,8 @@ class NewsDetailListScreenState extends State<NewsDetailListScreen> {
   Future<void> init() async {
     pageController = PageController(initialPage: widget.index);
 
+    // TODO:Commented it
+
     // if (isMobile && !getBoolAsync(DISABLE_AD)) {
     //   myBanner = buildBannerAd()..load();
 
@@ -40,11 +42,13 @@ class NewsDetailListScreenState extends State<NewsDetailListScreen> {
     //     mAdShowCount++;
     //   } else {
     //     mAdShowCount = 0;
+        
     //     loadInterstitialAd();
     //   }
     // }
   }
 
+//TODO:Commented it
   // void loadInterstitialAd() {
   //   InterstitialAd.load(
   //     adUnitId: kReleaseMode ? mAdMobInterstitialId : InterstitialAd.testAdUnitId,
@@ -97,6 +101,7 @@ class NewsDetailListScreenState extends State<NewsDetailListScreen> {
   void dispose() {
     setDynamicStatusBarColor(milliseconds: 0);
 
+//TODO:Commented it
     // showInterstitialAd();
 
     super.dispose();
