@@ -362,12 +362,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_lints",
-      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_localizations",
       "rootUri": "file:///C:/src/flutter/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
@@ -376,6 +370,12 @@
     {
       "name": "flutter_math_fork",
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_math_fork-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_mobx",
+      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-2.0.3+2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -564,12 +564,6 @@
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
-    },
-    {
-      "name": "lints",
-      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "logging",
@@ -950,6 +944,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "the_apple_sign_in",
+      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/the_apple_sign_in-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "timing",
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/timing-1.0.0",
       "packageUri": "lib/",
@@ -1148,7 +1148,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-01-12T01:20:46.948252Z",
+  "generated": "2022-01-13T21:01:06.322013Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }

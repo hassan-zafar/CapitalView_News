@@ -23,10 +23,12 @@ class DetailPageVariant1Widget extends StatefulWidget {
   final List<NewsData>? relatedNews;
   final String? heroTag;
 
-  DetailPageVariant1Widget(this.newsData, {this.postView, this.postContent, this.relatedNews, this.heroTag});
+  DetailPageVariant1Widget(this.newsData,
+      {this.postView, this.postContent, this.relatedNews, this.heroTag});
 
   @override
-  _DetailPageVariant1WidgetState createState() => _DetailPageVariant1WidgetState();
+  _DetailPageVariant1WidgetState createState() =>
+      _DetailPageVariant1WidgetState();
 }
 
 class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
@@ -50,20 +52,26 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
             if (widget.newsData!.category.validate().isNotEmpty)
               Text(
                 widget.newsData!.category!.first.name.validate().toUpperCase(),
-                style: boldTextStyle(size: 12, color: colorPrimary, letterSpacing: 1.2),
+                style: boldTextStyle(
+                    size: 12, color: colorPrimary, letterSpacing: 1.2),
               ).paddingSymmetric(horizontal: 16),
             16.height,
             Text(
               parseHtmlString(widget.newsData!.post_title.validate()),
-              style: boldTextStyle(size: 32, fontFamily: titleFont(), letterSpacing: 0.5),
+              style: boldTextStyle(
+                  size: 32, fontFamily: titleFont(), letterSpacing: 0.5),
             ).paddingSymmetric(horizontal: 16),
             16.height,
             Row(
               children: [
-                Text(widget.newsData!.human_time_diff.validate().toUpperCase(), style: secondaryTextStyle(size: 12)),
+                Text(widget.newsData!.human_time_diff.validate().toUpperCase(),
+                    style: secondaryTextStyle(size: 12)),
                 4.width,
                 Text('- ', style: secondaryTextStyle()),
-                Text(getArticleReadTime(context, widget.newsData!.post_content.validate()), style: secondaryTextStyle(size: 12)),
+                Text(
+                    getArticleReadTime(
+                        context, widget.newsData!.post_content.validate()),
+                    style: secondaryTextStyle(size: 12)),
               ],
             ).paddingSymmetric(horizontal: 16),
             24.height,
@@ -71,7 +79,9 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
               decoration: boxDecorationRoundedWithShadow(
                 8,
                 backgroundColor: context.cardColor,
-                shadowColor: appStore.isDarkMode ? Colors.grey.shade700 : Colors.black.withOpacity(0.6),
+                shadowColor: appStore.isDarkMode
+                    ? Colors.grey.shade700
+                    : Colors.black.withOpacity(0.6),
                 offset: Offset(0.5, 0.5),
                 blurRadius: defaultBlurRadius,
               ),
@@ -89,32 +99,46 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
               children: [
                 TextIcon(
                   onTap: () async {
-                    await CommentListScreen(widget.newsData!.iD).launch(context);
+                    await CommentListScreen(widget.newsData!.iD)
+                        .launch(context);
                     setDynamicStatusBarColorDetail(milliseconds: 400);
                   },
                   prefix: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(FontAwesome.commenting_o, size: 16, color: textSecondaryColor),
+                      Icon(FontAwesome.commenting_o,
+                          size: 16, color: textSecondaryColor),
                       4.width,
-                      CommentTextWidget(text: widget.newsData!.no_of_comments_text.validate(value: '0').splitBefore(' ')),
+                      CommentTextWidget(
+                          text: widget.newsData!.no_of_comments_text
+                              .validate(value: '0')
+                              .splitBefore(' ')),
                     ],
                   ),
                   text: '',
-                ).visible(widget.newsData!.no_of_comments_text.validate(value: '0').splitBefore(' ') != 'No'),
+                ).visible(widget.newsData!.no_of_comments_text
+                        .validate(value: '0')
+                        .splitBefore(' ') !=
+                    'No'),
                 TextIcon(
-                  prefix: Icon(FontAwesome.eye, size: 16, color: textSecondaryColor),
+                  prefix: Icon(FontAwesome.eye,
+                      size: 16, color: textSecondaryColor),
                   text: widget.postView.validate().toString(),
                   textStyle: secondaryTextStyle(),
                 ),
               ],
             ).paddingSymmetric(horizontal: 16),
             8.height,
-            HtmlWidget(postContent: widget.postContent).paddingSymmetric(horizontal: 8),
+            HtmlWidget(postContent: widget.postContent)
+                .paddingSymmetric(horizontal: 8),
             30.height,
-            Text('Authored by', style: secondaryTextStyle(letterSpacing: 1.2)).visible(widget.newsData!.post_author_name.validate().isNotEmpty).paddingSymmetric(horizontal: 16),
+            Text('Authored by', style: secondaryTextStyle(letterSpacing: 1.2))
+                .visible(
+                    widget.newsData!.post_author_name.validate().isNotEmpty)
+                .paddingSymmetric(horizontal: 16),
             Container(
-              decoration: boxDecorationRoundedWithShadow(8, blurRadius: 0, backgroundColor: context.cardColor),
+              decoration: boxDecorationRoundedWithShadow(8,
+                  blurRadius: 0, backgroundColor: context.cardColor),
               padding: EdgeInsets.all(16),
               margin: EdgeInsets.symmetric(vertical: 16),
               alignment: Alignment.center,
@@ -122,14 +146,29 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  widget.newsData!.post_author_image.validate().isNotEmpty
-                      ? cachedImage(widget.newsData!.post_author_image.validate(), height: 76, width: 76, fit: BoxFit.cover).cornerRadiusWithClipRRect(35)
-                      : Image.asset('assets/profile_image.jpg', height: 76, width: 76, fit: BoxFit.cover).cornerRadiusWithClipRRect(38),
+                  //Commented here
+                  // widget.newsData!.post_author_image.validate().isNotEmpty
+                  //     ? cachedImage(
+                  //             widget.newsData!.post_author_image.validate(),
+                  //             height: 76,
+                  //             width: 76,
+                  //             fit: BoxFit.cover)
+                  //         .cornerRadiusWithClipRRect(35)
+                  //     : Image.asset('assets/walk_2.jpg',
+                  //             height: 76, width: 76, fit: BoxFit.cover)
+                  //         .cornerRadiusWithClipRRect(38),
                   8.height,
-                  Text('${widget.newsData!.post_author_name.validate()}', style: boldTextStyle(letterSpacing: 1.2)).visible(widget.newsData!.post_author_name.validate().isNotEmpty),
+                  Text('${widget.newsData!.post_author_name.validate()}',
+                          style: boldTextStyle(letterSpacing: 1.2))
+                      .visible(widget.newsData!.post_author_name
+                          .validate()
+                          .isNotEmpty),
                 ],
               ),
-            ).visible(widget.newsData!.post_author_name.validate().isNotEmpty).paddingSymmetric(horizontal: 16),
+            )
+                .visible(
+                    widget.newsData!.post_author_name.validate().isNotEmpty)
+                .paddingSymmetric(horizontal: 16),
             AppButton(
               text: appLocalization.translate('view_Comments'),
               color: colorPrimary,
@@ -140,16 +179,22 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
                 setDynamicStatusBarColorDetail(milliseconds: 400);
               },
               width: context.width(),
-            ).paddingSymmetric(horizontal: 16).visible(widget.newsData!.comment_count.validate().isNotEmpty),
+            )
+                .paddingSymmetric(horizontal: 16)
+                .visible(widget.newsData!.comment_count.validate().isNotEmpty),
             8.height,
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
+                  padding:
+                      EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
                   margin: EdgeInsets.only(left: 16, top: 32, bottom: 8),
-                  decoration: BoxDecoration(color: colorPrimary, borderRadius: radius(defaultRadius)),
-                  child: Text(appLocalization.translate('related_news'), style: boldTextStyle(size: 12, color: Colors.white, letterSpacing: 1.5)),
+                  decoration: BoxDecoration(
+                      color: colorPrimary, borderRadius: radius(defaultRadius)),
+                  child: Text(appLocalization.translate('related_news'),
+                      style: boldTextStyle(
+                          size: 12, color: Colors.white, letterSpacing: 1.5)),
                 ),
                 BreakingNewsListWidget(widget.relatedNews.validate()),
               ],

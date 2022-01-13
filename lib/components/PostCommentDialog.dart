@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/main.dart';
 import 'package:mighty_news/network/RestApis.dart';
@@ -58,7 +59,8 @@ class PostCommentDialogState extends State<PostCommentDialog> {
       });
     }
 
-    return Container(
+    return Observer(
+      builder: (_) => Container(
         width: context.width(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,6 +95,7 @@ class PostCommentDialogState extends State<PostCommentDialog> {
             ).visible(!appStore.isLoading, defaultWidget: Loader().center().visible(appStore.isLoading))
           ],
         ),
-      );
+      ),
+    );
   }
 }

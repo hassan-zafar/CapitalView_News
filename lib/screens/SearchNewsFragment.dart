@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/components/NewsListWidget.dart';
@@ -161,7 +163,7 @@ class SearchNewsFragmentState extends State<SearchNewsFragment> {
             ),
           ),
           VerticalTextImageShimmer().paddingOnly(top: news.isNotEmpty ? 0 : 90, bottom: 16, left: 8, right: 8).center().visible(isShimmerLoading),
-         Loader().paddingOnly(top: news.isNotEmpty ? 0 : 90, bottom: 16, left: 8, right: 8).center().visible(appStore.isLoading),
+          Observer(builder: (_) => Loader().paddingOnly(top: news.isNotEmpty ? 0 : 90, bottom: 16, left: 8, right: 8).center().visible(appStore.isLoading)),
           Text(error.validate(), style: primaryTextStyle()).center().visible(hasError),
         ],
       ),

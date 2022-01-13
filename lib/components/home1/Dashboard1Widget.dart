@@ -114,8 +114,9 @@ class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerPro
                   NewsListWidget(widget.snap.data!.recent_post, padding: EdgeInsets.symmetric(horizontal: 8)),
                 ],
               ).visible(widget.snap.data!.recent_post.validate().isNotEmpty),
+//TODO:Commented it
 
-              TwitterFeedListWidget(),
+              // TwitterFeedListWidget(),
             ],
           ),
         ),

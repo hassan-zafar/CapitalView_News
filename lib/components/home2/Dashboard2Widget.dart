@@ -123,7 +123,9 @@ class Dashboard2WidgetState extends State<Dashboard2Widget> {
               16.height,
 
               //Show Twitter Widget only if you have not disabled in your Word-Press Admin panel
-              DashBoard2TwitterFeedListWidget(),
+              //TODO:Commented here
+              
+              // DashBoard2TwitterFeedListWidget(),
             ],
           ),
         ),

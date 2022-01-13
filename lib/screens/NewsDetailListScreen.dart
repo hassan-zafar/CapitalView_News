@@ -33,71 +33,76 @@ class NewsDetailListScreenState extends State<NewsDetailListScreen> {
   Future<void> init() async {
     pageController = PageController(initialPage: widget.index);
 
-    if (isMobile && !getBoolAsync(DISABLE_AD)) {
-      myBanner = buildBannerAd()..load();
+    // TODO:Commented it
 
-      if (mAdShowCount < 5) {
-        mAdShowCount++;
-      } else {
-        mAdShowCount = 0;
-        loadInterstitialAd();
-      }
-    }
+    // if (isMobile && !getBoolAsync(DISABLE_AD)) {
+    //   myBanner = buildBannerAd()..load();
+
+    //   if (mAdShowCount < 5) {
+    //     mAdShowCount++;
+    //   } else {
+    //     mAdShowCount = 0;
+        
+    //     loadInterstitialAd();
+    //   }
+    // }
   }
 
-  void loadInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: kReleaseMode ? mAdMobInterstitialId : InterstitialAd.testAdUnitId,
-      request: AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (InterstitialAd ad) {
-          print('$ad loaded');
-          myInterstitial = ad;
-        },
-        onAdFailedToLoad: (LoadAdError error) {
-          print('InterstitialAd failed to load: $error.');
-          myInterstitial = null;
-        },
-      ),
-    );
-  }
+//TODO:Commented it
+  // void loadInterstitialAd() {
+  //   InterstitialAd.load(
+  //     adUnitId: kReleaseMode ? mAdMobInterstitialId : InterstitialAd.testAdUnitId,
+  //     request: AdRequest(),
+  //     adLoadCallback: InterstitialAdLoadCallback(
+  //       onAdLoaded: (InterstitialAd ad) {
+  //         print('$ad loaded');
+  //         myInterstitial = ad;
+  //       },
+  //       onAdFailedToLoad: (LoadAdError error) {
+  //         print('InterstitialAd failed to load: $error.');
+  //         myInterstitial = null;
+  //       },
+  //     ),
+  //   );
+  // }
 
-  void showInterstitialAd() {
-    if (myInterstitial == null) {
-      print('Warning: attempt to show interstitial before loaded.');
-      return;
-    }
-    myInterstitial!.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
-      onAdDismissedFullScreenContent: (InterstitialAd ad) {
-        ad.dispose();
-        loadInterstitialAd();
-      },
-      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
-        ad.dispose();
-        loadInterstitialAd();
-      },
-    );
-    myInterstitial!.show();
-    myInterstitial = null;
-  }
+  // void showInterstitialAd() {
+  //   if (myInterstitial == null) {
+  //     print('Warning: attempt to show interstitial before loaded.');
+  //     return;
+  //   }
+  //   myInterstitial!.fullScreenContentCallback = FullScreenContentCallback(
+  //     onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
+  //     onAdDismissedFullScreenContent: (InterstitialAd ad) {
+  //       ad.dispose();
+  //       loadInterstitialAd();
+  //     },
+  //     onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+  //       ad.dispose();
+  //       loadInterstitialAd();
+  //     },
+  //   );
+  //   myInterstitial!.show();
+  //   myInterstitial = null;
+  // }
 
-  BannerAd buildBannerAd() {
-    return BannerAd(
-      adUnitId: kReleaseMode ? mAdMobBannerId : BannerAd.testAdUnitId,
-      size: AdSize.banner,
-      listener: BannerAdListener(onAdLoaded: (ad) {
-        //
-      }),
-      request: AdRequest(),
-    );
-  }
+  // BannerAd buildBannerAd() {
+  //   return BannerAd(
+  //     adUnitId: kReleaseMode ? mAdMobBannerId : BannerAd.testAdUnitId,
+  //     size: AdSize.banner,
+  //     listener: BannerAdListener(onAdLoaded: (ad) {
+  //       //
+  //     }),
+  //     request: AdRequest(),
+  //   );
+  // }
 
   @override
   void dispose() {
     setDynamicStatusBarColor(milliseconds: 0);
 
-    showInterstitialAd();
+//TODO:Commented it
+    // showInterstitialAd();
 
     super.dispose();
   }

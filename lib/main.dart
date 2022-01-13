@@ -5,6 +5,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/AppTheme.dart';
@@ -50,10 +51,8 @@ void main() async {
   await initialize(defaultDialogBorderRadius: 10);
 
   appStore.setLanguage(getStringAsync(LANGUAGE, defaultValue: defaultLanguage));
-  appStore
-      .setNotification(getBoolAsync(IS_NOTIFICATION_ON, defaultValue: true));
-  appStore.setTTSLanguage(
-      getStringAsync(TEXT_TO_SPEECH_LANG, defaultValue: defaultTTSLanguage));
+  appStore.setNotification(getBoolAsync(IS_NOTIFICATION_ON, defaultValue: true));
+  appStore.setTTSLanguage(getStringAsync(TEXT_TO_SPEECH_LANG, defaultValue: defaultTTSLanguage));
 
   ///Uncomment below line if you want to skip https certificate
   //HttpOverrides.global = HttpOverridesSkipCertificate();
@@ -65,11 +64,8 @@ void main() async {
     appStore.setDarkMode(true);
   }
 
-  fontSize = fontSizes.firstWhere((element) =>
-      element.fontSize == getIntAsync(FONT_SIZE_PREF, defaultValue: 16));
-  ttsLang = ttsLanguage.firstWhere((element) =>
-      element.fullLanguageCode ==
-      getStringAsync(TEXT_TO_SPEECH_LANG, defaultValue: defaultTTSLanguage));
+  fontSize = fontSizes.firstWhere((element) => element.fontSize == getIntAsync(FONT_SIZE_PREF, defaultValue: 16));
+  // ttsLang = ttsLanguage.firstWhere((element) => element.fullLanguageCode == getStringAsync(TEXT_TO_SPEECH_LANG, defaultValue: defaultTTSLanguage));
 
   if (isMobile) {
     await Firebase.initializeApp().then((value) {
@@ -92,23 +88,21 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: navigatorKey,
-      title: mAppName,
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      supportedLocales: Language.languagesLocale(),
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
-      ],
-      localeResolutionCallback: (locale, supportedLocales) => locale,
-      locale: Locale(appStore.selectedLanguageCode),
-      home: SplashScreen(),
-      scrollBehavior: SBehavior(),
+    return Observer(
+      builder: (_) => MaterialApp(
+        navigatorKey: navigatorKey,
+        title: mAppName,
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+        supportedLocales: Language.languagesLocale(),
+        localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
+        localeResolutionCallback: (locale, supportedLocales) => locale,
+        locale: Locale(appStore.selectedLanguageCode),
+        home: SplashScreen(),
+        scrollBehavior: SBehavior(),
+      ),
     );
   }
 }

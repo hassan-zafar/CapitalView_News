@@ -113,10 +113,9 @@ class SplashScreenState extends State<SplashScreen> {
       body: SizedBox(
         height: context.height(),
         width: context.width(),
-        child: Center(
-          child: Image.asset(
-            'assets/app_logo.png',
-          ),
+        child: Image.asset(
+          'assets/app_logo.ong',
+          // fit: BoxFit.fitHeight,
         ),
       ),
     );

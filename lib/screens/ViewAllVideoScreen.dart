@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/components/VideoListWidget.dart';
 import 'package:mighty_news/models/DashboardResponse.dart';
@@ -88,7 +89,8 @@ class ViewAllVideoScreenState extends State<ViewAllVideoScreen> {
           color: getAppBarWidgetBackGroundColor(),
           textColor: getAppBarWidgetTextColor(),
         ),
-        body: Stack(
+        body: Observer(
+          builder: (_) => Stack(
             children: [
               VideoListWidget(videos, axis: Axis.vertical, scrollController: scrollController),
               noDataWidget(context).visible(!appStore.isLoading && videos.isEmpty),
@@ -98,7 +100,7 @@ class ViewAllVideoScreenState extends State<ViewAllVideoScreen> {
               ),
             ],
           ),
-        
+        ),
       ),
     );
   }

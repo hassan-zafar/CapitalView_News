@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mighty_news/AppLocalizations.dart';
 import 'package:mighty_news/models/DashboardResponse.dart';
 import 'package:mighty_news/utils/Colors.dart';
