@@ -1,5 +1,5 @@
 # mighty_news
-
+[![wakatime](https://wakatime.com/badge/user/95cc268b-6e4f-469d-8aee-c933dee3f3be/project/0167ad6b-9982-4c75-945a-2fca891714b6.svg)](https://wakatime.com/badge/user/95cc268b-6e4f-469d-8aee-c933dee3f3be/project/0167ad6b-9982-4c75-945a-2fca891714b6)
 A new Flutter application.
 
 ## Getting Started
