@@ -4,13 +4,14 @@ import 'package:http/http.dart' as http;
 
 class WatchList extends StatelessWidget {
   final String apiUrl =
-      "http://api.marketstack.com/v1/eod?access_key=apikey&symbols=AAPL,MSFT,FB,TSLA,INTC,CSCO,NVDA,MTU,WMT,KO,EBAY,MOT";
+      "http://api.marketstack.com/v1/eod?access_key=b6f28f35c8a2bbb48b52d36e3906a72b&symbols=AAPL,MSFT,FB,TSLA,INTC,CSCO,NVDA,MTU,WMT,KO,EBAY,MOT";
   // static Route<dynamic> route() => MaterialPageRoute(
   //       builder: (context) => WatchList(),
   //     );
 
   Future<List<dynamic>> fetchStockData() async {
     var result = await http.get(Uri.parse(apiUrl));
+    print(result.body);
     return json.decode(result.body)['data'];
   }
 
@@ -19,7 +20,7 @@ class WatchList extends StatelessWidget {
   }
 
   _open(dynamic stats) {
-    return stats['open'].toString();
+    return "\$${stats['open'].toString()}";
   }
 
   _high(dynamic stats) {
@@ -83,7 +84,7 @@ class WatchList extends StatelessWidget {
                             ),
                           ],
                         ),
-                        trailing: Text(_exchange(snapshot.data[index])),
+                        trailing: Text(_open(snapshot.data[index])),
                         // trailing: FlatButton(
                         //   color: double.parse(_open(snapshot.data[0])) <
                         //           double.parse(_open(snapshot.data[1]))

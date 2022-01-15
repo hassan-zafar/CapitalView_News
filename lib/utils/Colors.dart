@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-const colorPrimary = Color(0xFFcc1c2c);
+const colorPrimary = Color(0xff5774B8);
+// Color(0xFFcc1c2c);
 const scaffoldColorDark = Color(0xFF090909);
 const scaffoldSecondaryDark = Color(0xFF1E1E1E);
 const appButtonColorDark = Color(0xFF282828);

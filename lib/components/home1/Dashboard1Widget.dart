@@ -26,7 +26,8 @@ class Dashboard1Widget extends StatefulWidget {
   Dashboard1WidgetState createState() => Dashboard1WidgetState();
 }
 
-class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerProviderStateMixin {
+class Dashboard1WidgetState extends State<Dashboard1Widget>
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
@@ -50,7 +51,7 @@ class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerPro
   @override
   Widget build(BuildContext context) {
     var appLocalization = AppLocalizations.of(context)!;
-
+    print(widget.snap.data!.videos);
     return SafeArea(
       top: !isIos ? true : false,
       child: Container(
@@ -71,9 +72,14 @@ class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerPro
                 children: [
                   20.height,
                   ViewAllHeadingWidget(
-                    title: appLocalization.translate('breaking_News').toUpperCase(),
+                    title: appLocalization
+                        .translate('breaking_News')
+                        .toUpperCase(),
                     onTap: () {
-                      ViewAllNewsScreen(title: 'breaking_News', req: {'posts_per_page': postsPerPage, FILTER: FILTER_FEATURE}).launch(context);
+                      ViewAllNewsScreen(title: 'breaking_News', req: {
+                        'posts_per_page': postsPerPage,
+                        FILTER: FILTER_FEATURE
+                      }).launch(context);
                     },
                   ),
                   8.height,
@@ -89,13 +95,14 @@ class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerPro
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ViewAllHeadingWidget(
-                    title: appLocalization.translate('videos').toUpperCase(),
+                    title: 'VIDEOS',
                     onTap: () {
                       ViewAllVideoScreen().launch(context);
                     },
                   ),
                   8.height,
-                  VideoListWidget(widget.snap.data!.videos.validate(), axis: Axis.horizontal),
+                  VideoListWidget(widget.snap.data!.videos.validate(),
+                      axis: Axis.horizontal),
                   8.height,
                 ],
               ).visible(widget.snap.data!.videos.validate().isNotEmpty),
@@ -105,13 +112,18 @@ class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerPro
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ViewAllHeadingWidget(
-                    title: appLocalization.translate('recent_News').toUpperCase(),
+                    title:
+                        appLocalization.translate('recent_News').toUpperCase(),
                     onTap: () {
-                      ViewAllNewsScreen(title: 'recent_News', req: {'posts_per_page': postsPerPage}).launch(context);
+                      ViewAllNewsScreen(
+                              title: 'recent_News',
+                              req: {'posts_per_page': postsPerPage})
+                          .launch(context);
                     },
                   ),
                   8.height,
-                  NewsListWidget(widget.snap.data!.recent_post, padding: EdgeInsets.symmetric(horizontal: 8)),
+                  NewsListWidget(widget.snap.data!.recent_post,
+                      padding: EdgeInsets.symmetric(horizontal: 8)),
                 ],
               ).visible(widget.snap.data!.recent_post.validate().isNotEmpty),
 //TODO:Commented it
