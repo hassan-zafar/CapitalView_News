@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"<ns1:g id="APP_NAME">%1$s</ns1:g> កំពុងមានបញ្ហាជាមួយសេវាកម្មរបស់ Google Play ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។"</string>
+    <string msgid="4014704848104544569" name="offline_notification_text">"ចុចដើម្បីបើក​ការផ្សាយពាណិជ្ជកម្ម"</string>
+    <string msgid="6989673690118446590" name="offline_notification_title">"មើល​ការផ្សាយពាណិជ្ជកម្ម​ដែលអ្នកបានរក្សាទុក នៅពេលអ្នកគ្មានអ៊ីនធឺណិត"</string>
+    <string msgid="6452552490969291315" name="offline_opt_in_confirm">"យល់ព្រម"</string>
+    <string msgid="2485091187023273083" name="offline_opt_in_confirmation">"អ្នកនឹងទទួលបាន​ការជូនដំណឹងដែលមានតំណ នៅពេលអ្នកមាន​ការតភ្ជាប់អ៊ីនធឺណិតវិញ"</string>
+    <string msgid="1070677888032715836" name="offline_opt_in_decline">"ទេ អរគុណ"</string>
+    <string msgid="5998527443747404848" name="offline_opt_in_message">"យើងនឹងផ្ញើ​ការជូនដំណឹង​ដែលមាន​តំណ​ទៅកាន់​គេហទំព័ររបស់​អ្នកផ្សាយពាណិជ្ជកម្មដល់អ្នក។"</string>
+    <string msgid="4928666061183236333" name="offline_opt_in_title">"បើក​ការផ្សាយពាណិជ្ជកម្ម នៅពេលអ្នក​មាន​ការតភ្ជាប់​អ៊ីនធឺណិតវិញ។"</string>
+    <string msgid="368094699078615544" name="s1">"រក្សាទុក​រូបភាព"</string>
+    <string msgid="4550830452390689489" name="s2">"អនុញ្ញាត​ឲ្យ​ពាណិជ្ជកម្ម​ផ្ទុក​រូបភាព​នៅក្នុង​វិចិត្រសាល​រូបភាព​ដែរទេ?"</string>
+    <string msgid="2435407834265420668" name="s3">"យល់ព្រម"</string>
+    <string msgid="9167523597401839819" name="s4">"បដិសេធ"</string>
+    <string msgid="1566682516266724847" name="s5">"បង្កើត​ព្រឹត្តិការណ៍​ក្នុង​ប្រតិទិន"</string>
+    <string msgid="5996672174517137271" name="s6">"អនុញ្ញាត​ឲ្យ​ពាណិជ្ជកម្ម​បង្កើត​ព្រឹត្តិការណ៍​ក្នុង​ប្រតិទិន​ដែរទេ?"</string>
+    <string msgid="7163549807207034258" name="s7">"ពាណិជ្ជកម្ម​សាកល្បង"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+</resources>

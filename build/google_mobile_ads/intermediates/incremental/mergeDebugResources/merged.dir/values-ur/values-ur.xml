@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> کو Google Play سروسز کے ساتھ مسئلہ پیش آ رہا ہے۔ براہ کرم دوبارہ کوشش کریں۔"</string>
+    <string msgid="4014704848104544569" name="offline_notification_text">"اشتہار کھولنے کیلئے تھپتھپائیں"</string>
+    <string msgid="6989673690118446590" name="offline_notification_title">"جب آپ آف لائن تھے تب آپ نے جس اشتہار کو محفوظ کیا تھا اس کا ملاحظہ کریں"</string>
+    <string msgid="6452552490969291315" name="offline_opt_in_confirm">"ٹھیک ہے"</string>
+    <string msgid="2485091187023273083" name="offline_opt_in_confirmation">"جب آپ آن لائن واپس آئیں گے تو آپ کو لنک کے ساتھ اطلاع حاصل ہوگی"</string>
+    <string msgid="1070677888032715836" name="offline_opt_in_decline">"نہیں شکریہ"</string>
+    <string msgid="5998527443747404848" name="offline_opt_in_message">"ہم آپ کو مشتہر کی سائٹ کے لنک کے ساتھ اطلاع بھیجیں گے۔"</string>
+    <string msgid="4928666061183236333" name="offline_opt_in_title">"آن لائن واپس آنے پر اشتہار کھولیں۔"</string>
+    <string msgid="368094699078615544" name="s1">"تصویر محفوظ کریں"</string>
+    <string msgid="4550830452390689489" name="s2">"اشتہار کو تصویری گیلری میں تصویر محفوظ کرنے کی اجازت دیں؟"</string>
+    <string msgid="2435407834265420668" name="s3">"قبول کریں"</string>
+    <string msgid="9167523597401839819" name="s4">"مسترد کریں"</string>
+    <string msgid="1566682516266724847" name="s5">"کیلنڈر ایونٹ بنائیں"</string>
+    <string msgid="5996672174517137271" name="s6">"اشتہار کو ایک کیلنڈر ایونٹ بنانے کی اجازت دیں؟"</string>
+    <string msgid="7163549807207034258" name="s7">"اشتہار ٹیسٹ کریں"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"+999"</string>
+</resources>

@@ -1,0 +1,116 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\GitHub\\CapitalView_News\\build\\google_mobile_ads\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pl\\values-pl.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hassan\\.gradle\\caches\\transforms-2\\files-2.1\\647211ce517ca98c09db8437eaa95152\\core-1.6.0\\res\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1759",
+                        "endColumns": "100",
+                        "endOffsets": "1855"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hassan\\.gradle\\caches\\transforms-2\\files-2.1\\bcea1bd8aa8fd9fde88e929c58479bc2\\jetified-play-services-ads-20.1.0\\res\\values-pl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,308,432,512,665,746,882,1010,1079,1191,1259,1323,1411,1525",
+                        "endColumns": "108,123,79,152,80,135,127,68,111,67,63,87,113,72",
+                        "endOffsets": "307,431,511,664,745,881,1009,1078,1190,1258,1322,1410,1524,1597"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "304,417,545,629,786,871,1011,1143,1216,1332,1404,1472,1564,1682",
+                        "endColumns": "112,127,83,156,84,139,131,72,115,71,67,91,117,76",
+                        "endOffsets": "412,540,624,781,866,1006,1138,1211,1327,1399,1467,1559,1677,1754"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hassan\\.gradle\\caches\\transforms-2\\files-2.1\\1c16c2604be1ce581b0cd8032f35f360\\jetified-play-services-basement-17.6.0\\res\\values-pl\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "198",
+                        "endOffsets": "445"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "198",
+                        "endOffsets": "299"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\GitHub\\CapitalView_News\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\values-pl\\values-pl.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hassan\\.gradle\\caches\\transforms-2\\files-2.1\\647211ce517ca98c09db8437eaa95152\\core-1.6.0\\res\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1759",
+                        "endColumns": "100",
+                        "endOffsets": "1855"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hassan\\.gradle\\caches\\transforms-2\\files-2.1\\bcea1bd8aa8fd9fde88e929c58479bc2\\jetified-play-services-ads-20.1.0\\res\\values-pl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,308,432,512,665,746,882,1010,1079,1191,1259,1323,1411,1525",
+                        "endColumns": "108,123,79,152,80,135,127,68,111,67,63,87,113,72",
+                        "endOffsets": "307,431,511,664,745,881,1009,1078,1190,1258,1322,1410,1524,1597"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "304,417,545,629,786,871,1011,1143,1216,1332,1404,1472,1564,1682",
+                        "endColumns": "112,127,83,156,84,139,131,72,115,71,67,91,117,76",
+                        "endOffsets": "412,540,624,781,866,1006,1138,1211,1327,1399,1467,1559,1677,1754"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hassan\\.gradle\\caches\\transforms-2\\files-2.1\\1c16c2604be1ce581b0cd8032f35f360\\jetified-play-services-basement-17.6.0\\res\\values-pl\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "198",
+                        "endOffsets": "445"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "198",
+                        "endOffsets": "299"
+                    }
+                }
+            ]
+        }
+    ]
+}

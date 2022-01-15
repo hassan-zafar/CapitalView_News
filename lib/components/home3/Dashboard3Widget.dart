@@ -70,16 +70,41 @@ class Dashboard3WidgetState extends State<Dashboard3Widget> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   20.height,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      16.height,
+                      ViewAllHeadingWidget(
+                        title:
+                            appLocalization.translate('videos').toUpperCase(),
+                        backgroundColor: white,
+                        textColor: scaffoldColorDark,
+                        onTap: () {
+                          ViewAllVideoScreen().launch(context);
+                        },
+                      ),
+                      8.height,
+                      VideoListWidget(widget.snap.data!.videos.validate(),
+                          axis: Axis.horizontal),
+                    ],
+                  ).visible(widget.snap.data!.videos.validate().isNotEmpty),
                   ViewAllHeadingWidget(
-                    title: appLocalization.translate('breaking_News').toUpperCase(),
+                    title: appLocalization
+                        .translate('breaking_News')
+                        .toUpperCase(),
                     backgroundColor: white,
                     textColor: scaffoldColorDark,
                     onTap: () {
-                      ViewAllNewsScreen(title: 'breaking_News', req: {'posts_per_page': postsPerPage, FILTER: FILTER_FEATURE}).launch(context);
+                      ViewAllNewsScreen(title: 'breaking_News', req: {
+                        'posts_per_page': postsPerPage,
+                        FILTER: FILTER_FEATURE
+                      }).launch(context);
                     },
                   ),
                   8.height,
-                  Dashboard3BreakingNewsListWidget(widget.snap.data!.breaking_post),
+                  Dashboard3BreakingNewsListWidget(
+                      widget.snap.data!.breaking_post),
                 ],
               ).visible(widget.snap.data!.breaking_post.validate().isNotEmpty),
 
@@ -92,35 +117,22 @@ class Dashboard3WidgetState extends State<Dashboard3Widget> {
                 children: [
                   16.height,
                   ViewAllHeadingWidget(
-                    title: appLocalization.translate('recent_News').toUpperCase(),
+                    title:
+                        appLocalization.translate('recent_News').toUpperCase(),
                     textColor: scaffoldColorDark,
                     backgroundColor: white,
                     onTap: () {
-                      ViewAllNewsScreen(title: 'recent_News', req: {'posts_per_page': postsPerPage}).launch(context);
+                      ViewAllNewsScreen(
+                              title: 'recent_News',
+                              req: {'posts_per_page': postsPerPage})
+                          .launch(context);
                     },
                   ),
                   8.height,
-                  Dashboard3NewsListWidget(widget.snap.data!.recent_post, padding: EdgeInsets.symmetric(horizontal: 8)),
+                  Dashboard3NewsListWidget(widget.snap.data!.recent_post,
+                      padding: EdgeInsets.symmetric(horizontal: 8)),
                 ],
               ).visible(widget.snap.data!.recent_post.validate().isNotEmpty),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  16.height,
-                  ViewAllHeadingWidget(
-                    title: appLocalization.translate('videos').toUpperCase(),
-                    backgroundColor: white,
-                    textColor: scaffoldColorDark,
-                    onTap: () {
-                      ViewAllVideoScreen().launch(context);
-                    },
-                  ),
-                  8.height,
-                  VideoListWidget(widget.snap.data!.videos.validate(), axis: Axis.horizontal),
-                ],
-              ).visible(widget.snap.data!.videos.validate().isNotEmpty),
 
               16.height,
 

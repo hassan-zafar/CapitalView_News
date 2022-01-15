@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"<ns1:g id="APP_NAME">%1$s</ns1:g> hat Probleme mit Google Play-Diensten. Bitte versuche es noch einmal."</string>
+    <string msgid="4014704848104544569" name="offline_notification_text">"Tippen, um die Werbung zu öffnen"</string>
+    <string msgid="6989673690118446590" name="offline_notification_title">"Werbung anzeigen, die du gespeichert hast, während du offline warst"</string>
+    <string msgid="6452552490969291315" name="offline_opt_in_confirm">"OK"</string>
+    <string msgid="2485091187023273083" name="offline_opt_in_confirmation">"Du bekommst eine Benachrichtigung mit dem Link, wenn du wieder online bist"</string>
+    <string msgid="1070677888032715836" name="offline_opt_in_decline">"Nein danke"</string>
+    <string msgid="5998527443747404848" name="offline_opt_in_message">"Wir senden dir eine Benachrichtigung mit einem Link zur Website des Werbetreibenden."</string>
+    <string msgid="4928666061183236333" name="offline_opt_in_title">"Werbung öffnen, wenn du wieder online bist."</string>
+    <string msgid="368094699078615544" name="s1">"Bild speichern"</string>
+    <string msgid="4550830452390689489" name="s2">"Der Werbeanzeige erlauben, das Bild in der Bildergalerie zu speichern?"</string>
+    <string msgid="2435407834265420668" name="s3">"Zustimmen"</string>
+    <string msgid="9167523597401839819" name="s4">"Ablehnen"</string>
+    <string msgid="1566682516266724847" name="s5">"Kalendertermin erstellen"</string>
+    <string msgid="5996672174517137271" name="s6">"Der Werbeanzeige erlauben, einen Kalendertermin zu erstellen?"</string>
+    <string msgid="7163549807207034258" name="s7">"Testanzeige"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+</resources>

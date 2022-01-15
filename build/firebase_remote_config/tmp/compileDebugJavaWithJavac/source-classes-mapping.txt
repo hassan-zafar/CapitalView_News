@@ -1,0 +1,6 @@
+io/flutter/plugins/firebase/firebaseremoteconfig/FlutterFirebaseAppRegistrar.java
+ io.flutter.plugins.firebase.firebaseremoteconfig.FlutterFirebaseAppRegistrar
+io/flutter/plugins/firebase/firebaseremoteconfig/BuildConfig.java
+ io.flutter.plugins.firebase.firebaseremoteconfig.BuildConfig
+io/flutter/plugins/firebase/firebaseremoteconfig/FirebaseRemoteConfigPlugin.java
+ io.flutter.plugins.firebase.firebaseremoteconfig.FirebaseRemoteConfigPlugin

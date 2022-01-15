@@ -1,0 +1,11 @@
+com/tundralabs/fluttertts/FlutterTtsPlugin.java
+ com.tundralabs.fluttertts.FlutterTtsPlugin
+ com.tundralabs.fluttertts.FlutterTtsPlugin$1
+ com.tundralabs.fluttertts.FlutterTtsPlugin$2
+ com.tundralabs.fluttertts.FlutterTtsPlugin$3
+ com.tundralabs.fluttertts.FlutterTtsPlugin$4
+ com.tundralabs.fluttertts.FlutterTtsPlugin$5
+ com.tundralabs.fluttertts.FlutterTtsPlugin$6
+ com.tundralabs.fluttertts.FlutterTtsPlugin$7
+com/tundralabs/fluttertts/BuildConfig.java
+ com.tundralabs.fluttertts.BuildConfig

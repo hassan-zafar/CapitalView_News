@@ -1,0 +1,16 @@
+io/flutter/plugins/firebase/crashlytics/FlutterFirebaseCrashlyticsPlugin.java
+ io.flutter.plugins.firebase.crashlytics.FlutterFirebaseCrashlyticsPlugin
+ io.flutter.plugins.firebase.crashlytics.FlutterFirebaseCrashlyticsPlugin$1
+ io.flutter.plugins.firebase.crashlytics.FlutterFirebaseCrashlyticsPlugin$2
+ io.flutter.plugins.firebase.crashlytics.FlutterFirebaseCrashlyticsPlugin$3
+ io.flutter.plugins.firebase.crashlytics.FlutterFirebaseCrashlyticsPlugin$4
+io/flutter/plugins/firebase/crashlytics/FlutterFirebaseAppRegistrar.java
+ io.flutter.plugins.firebase.crashlytics.FlutterFirebaseAppRegistrar
+io/flutter/plugins/firebase/crashlytics/FlutterError.java
+ io.flutter.plugins.firebase.crashlytics.FlutterError
+io/flutter/plugins/firebase/crashlytics/Constants.java
+ io.flutter.plugins.firebase.crashlytics.Constants
+io/flutter/plugins/firebase/crashlytics/FirebaseCrashlyticsTestCrash.java
+ io.flutter.plugins.firebase.crashlytics.FirebaseCrashlyticsTestCrash
+io/flutter/plugins/firebase/crashlytics/BuildConfig.java
+ io.flutter.plugins.firebase.crashlytics.BuildConfig

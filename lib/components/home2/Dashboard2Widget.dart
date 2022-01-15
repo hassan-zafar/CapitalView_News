@@ -55,53 +55,6 @@ class Dashboard2WidgetState extends State<Dashboard2Widget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BreakingNewsMarqueeWidget(data: widget.snap.data!.breaking_post),
-
-              StoryListWidget(
-                list: widget.snap.data!.story_post,
-                backgroundColor: white,
-                textColor: scaffoldColorDark,
-              ),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  20.height,
-                  ViewAllHeadingWidget(
-                    title: appLocalization.translate('breaking_News').toUpperCase(),
-                    backgroundColor: white,
-                    textColor: scaffoldColorDark,
-                    onTap: () {
-                      ViewAllNewsScreen(title: 'breaking_News', req: {'posts_per_page': postsPerPage, FILTER: FILTER_FEATURE}).launch(context);
-                    },
-                  ),
-                  8.height,
-                  DashBoard2BreakingNewsListWidget(widget.snap.data!.breaking_post),
-                ],
-              ).visible(widget.snap.data!.breaking_post.validate().isNotEmpty),
-
-              // Quick Read
-              QuickReadWidget(widget.snap.data!.recent_post),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  16.height,
-                  ViewAllHeadingWidget(
-                    title: appLocalization.translate('recent_News').toUpperCase(),
-                    backgroundColor: white,
-                    textColor: scaffoldColorDark,
-                    onTap: () {
-                      ViewAllNewsScreen(title: 'recent_News', req: {'posts_per_page': postsPerPage}).launch(context);
-                    },
-                  ),
-                  8.height,
-                  DashBoard2NewsListWidget(widget.snap.data!.recent_post, padding: EdgeInsets.symmetric(horizontal: 8)),
-                ],
-              ).visible(widget.snap.data!.recent_post.validate().isNotEmpty),
-
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -116,15 +69,74 @@ class Dashboard2WidgetState extends State<Dashboard2Widget> {
                     },
                   ),
                   8.height,
-                  DashBoard2VideoListWidget(widget.snap.data!.videos.validate(), axis: Axis.horizontal),
+                  DashBoard2VideoListWidget(widget.snap.data!.videos.validate(),
+                      axis: Axis.horizontal),
                 ],
               ).visible(widget.snap.data!.videos.validate().isNotEmpty),
+
+              BreakingNewsMarqueeWidget(data: widget.snap.data!.breaking_post),
+
+              StoryListWidget(
+                list: widget.snap.data!.story_post,
+                backgroundColor: white,
+                textColor: scaffoldColorDark,
+              ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  20.height,
+                  ViewAllHeadingWidget(
+                    title: appLocalization
+                        .translate('breaking_News')
+                        .toUpperCase(),
+                    backgroundColor: white,
+                    textColor: scaffoldColorDark,
+                    onTap: () {
+                      ViewAllNewsScreen(title: 'breaking_News', req: {
+                        'posts_per_page': postsPerPage,
+                        FILTER: FILTER_FEATURE
+                      }).launch(context);
+                    },
+                  ),
+                  8.height,
+                  DashBoard2BreakingNewsListWidget(
+                      widget.snap.data!.breaking_post),
+                ],
+              ).visible(widget.snap.data!.breaking_post.validate().isNotEmpty),
+
+              // Quick Read
+              QuickReadWidget(widget.snap.data!.recent_post),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  16.height,
+                  ViewAllHeadingWidget(
+                    title:
+                        appLocalization.translate('recent_News').toUpperCase(),
+                    backgroundColor: white,
+                    textColor: scaffoldColorDark,
+                    onTap: () {
+                      ViewAllNewsScreen(
+                              title: 'recent_News',
+                              req: {'posts_per_page': postsPerPage})
+                          .launch(context);
+                    },
+                  ),
+                  8.height,
+                  DashBoard2NewsListWidget(widget.snap.data!.recent_post,
+                      padding: EdgeInsets.symmetric(horizontal: 8)),
+                ],
+              ).visible(widget.snap.data!.recent_post.validate().isNotEmpty),
 
               16.height,
 
               //Show Twitter Widget only if you have not disabled in your Word-Press Admin panel
               //TODO:Commented here
-              
+
               // DashBoard2TwitterFeedListWidget(),
             ],
           ),

@@ -1,0 +1,1 @@
+[{"outputType":{"type":"MERGED_MANIFESTS"},"apkData":{"type":"MAIN","splits":[],"versionCode":-1,"enabled":true,"outputFile":"connectivity_plus-debug.aar","fullName":"debug","baseName":"debug","dirName":""},"path":"../../library_manifest/debug/AndroidManifest.xml","properties":{"packageId":"dev.fluttercommunity.plus.connectivity","split":""}}]

@@ -14,7 +14,6 @@ import '../BreakingNewsListWidget.dart';
 import '../NewsListWidget.dart';
 import '../QuickReadWidget.dart';
 import '../StoryListWidget.dart';
-import '../TwitterFeedListWidget.dart';
 import '../ViewAllHeadingWidget.dart';
 
 class Dashboard1Widget extends StatefulWidget {
@@ -35,7 +34,7 @@ class Dashboard1WidgetState extends State<Dashboard1Widget>
   }
 
   Future<void> init() async {
-    //
+    
   }
 
   @override
@@ -62,6 +61,23 @@ class Dashboard1WidgetState extends State<Dashboard1Widget>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ViewAllHeadingWidget(
+                    title: 'VIDEOS',
+                    onTap: () {
+                      ViewAllVideoScreen().launch(context);
+                    },
+                  ),
+                  8.height,
+                  VideoListWidget(widget.snap.data!.videos.validate(),
+                      axis: Axis.horizontal),
+                  8.height,
+                ],
+              ).visible(widget.snap.data!.videos.validate().isNotEmpty),
+
               BreakingNewsMarqueeWidget(data: widget.snap.data!.breaking_post),
 
               StoryListWidget(list: widget.snap.data!.story_post),
@@ -89,23 +105,6 @@ class Dashboard1WidgetState extends State<Dashboard1Widget>
 
               // Quick Read
               QuickReadWidget(widget.snap.data!.recent_post),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ViewAllHeadingWidget(
-                    title: 'VIDEOS',
-                    onTap: () {
-                      ViewAllVideoScreen().launch(context);
-                    },
-                  ),
-                  8.height,
-                  VideoListWidget(widget.snap.data!.videos.validate(),
-                      axis: Axis.horizontal),
-                  8.height,
-                ],
-              ).visible(widget.snap.data!.videos.validate().isNotEmpty),
 
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
