@@ -1,4 +1,0 @@
-io/flutter/plugins/packageinfo/PackageInfoPlugin.java
- io.flutter.plugins.packageinfo.PackageInfoPlugin
-io/flutter/plugins/packageinfo/BuildConfig.java
- io.flutter.plugins.packageinfo.BuildConfig

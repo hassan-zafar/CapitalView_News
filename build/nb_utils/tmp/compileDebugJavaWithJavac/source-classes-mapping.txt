@@ -1,2 +1,0 @@
-com/nb/nb_utils/BuildConfig.java
- com.nb.nb_utils.BuildConfig
