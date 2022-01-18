@@ -1,8 +1,10 @@
 # CapitalView Today-News App Created with flutter
 [![wakatime](https://wakatime.com/badge/user/95cc268b-6e4f-469d-8aee-c933dee3f3be/project/0167ad6b-9982-4c75-945a-2fca891714b6.svg)](https://wakatime.com/badge/user/95cc268b-6e4f-469d-8aee-c933dee3f3be/project/0167ad6b-9982-4c75-945a-2fca891714b6)
-
+<div align="center">
+  
 https://user-images.githubusercontent.com/60160952/149562219-8d4623b3-a102-4d2e-a521-f60a1fd09b10.mp4
-
+  
+</div>
 
 ## Getting Started
 
