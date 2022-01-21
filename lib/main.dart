@@ -16,7 +16,6 @@ import 'package:mighty_news/utils/Colors.dart';
 import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
-
 import 'models/LanguageModel.dart';
 import 'models/WeatherResponse.dart';
 
