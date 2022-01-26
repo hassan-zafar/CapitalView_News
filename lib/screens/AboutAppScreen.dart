@@ -58,14 +58,17 @@ class AboutAppScreen extends StatelessWidget {
               Text('Capital View', style: primaryTextStyle()),
               16.height,
               Text(
-                '$mAppName app is a smart Flutter news app. It contains Flutter source code and to build your news application with most useful'
-                ' features and eye-catching outlook. If you are planning to deploy your news app project for android and ios users, then it’s your'
-                ' perfect match to have on your hand.',
+                'Capital View’s cost-effective platform provides market exposure for industry-related companies and services, enabling them to reach a broad audience through written content as well as video and streaming services.',
+                style: primaryTextStyle(size: 14),
+                textAlign: TextAlign.justify,
+              ),
+              Text(
+                "Through Capital View’s innovative platform, consumers are given an in-depth perspective on emerging growth service funds and individual stocks, as well as exposure to emerging market opportunities",
                 style: primaryTextStyle(size: 14),
                 textAlign: TextAlign.justify,
               ),
               Text('Developed By', style: secondaryTextStyle()),
-              Text('Hassan Zafar', style: primaryTextStyle()),
+              Text('Capital View', style: primaryTextStyle()),
               16.height,
               AppButton(
                 color:
@@ -75,12 +78,11 @@ class AboutAppScreen extends StatelessWidget {
                   children: [
                     Icon(Icons.contact_support_outlined, color: Colors.white),
                     8.width,
-                    Text('Contact Developer',
-                        style: boldTextStyle(color: white)),
+                    Text('Capital View', style: boldTextStyle(color: white)),
                   ],
                 ),
                 onTap: () {
-                  launchUrl('mailto:hz.asd1@gmail.com}');
+                  launchUrl('mailto:info@capitalview.today}');
                 },
               ),
               16.height,
