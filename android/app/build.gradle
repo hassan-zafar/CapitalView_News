@@ -40,8 +40,8 @@ android {
         applicationId "com.hassan_zafar.capitalview"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 37
-        versionName "2.4.1"
+        versionCode 39
+        versionName "3"
         multiDexEnabled true
         //signingConfig signingConfigs.release
     }
