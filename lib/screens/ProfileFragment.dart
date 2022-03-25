@@ -343,7 +343,7 @@ class ProfileFragmentState extends State<ProfileFragment> {
                       leading: Icon(Icons.assignment_outlined),
                       title: appLocalization.translate('privacyPolicy'),
                       onTap: () {
-                        launchUrl(getStringAsync(PRIVACY_POLICY_PREF),
+                        launchUrl('https://capitalview.today/privacy-policy/',
                             forceWebView: true);
                       },
                     ),
